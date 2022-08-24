@@ -14,7 +14,7 @@
   </head>
   <body id="home">
     <header class="hero blog">
-      <div id="navbar" class="navbar">
+      <div id="navbar" class="navbar top">
         <h1 class="logo">
           <span class="text-primary"><i class="fas fa-book-open"></i>Edge</span
           >Ledger
@@ -34,19 +34,40 @@
         <h1>Blog</h1>
       </div>
     </header>
-<main>
-  <section class="post">
-    <h2>Blog Post 1</h2>
-    <p class="meta"><i class="fas fa-user"></i>
-      Posted by <strong>John Doe</strong> | April 20,2022
-    </p>
-    <img src="images/blog/blog1.jpg" alt="">
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus distinctio modi, corrupti adipisci nisi, quos impedit fugit ad ducimus accusamus quasi, fugiat nostrum. Itaque fuga deleniti nisi dignissimos, officiis sed.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, repellat sint laboriosam ipsa ducimus tenetur fugit cum sed cupiditate, eos in! Expedita, quisquam fuga. Placeat vero, maiores praesentium mollitia consequuntur aperiam iste. Iste expedita quaerat tempora optio incidunt nam provident. Adipisci tempora quaerat repellat explicabo ducimus aspernatur voluptate molestiae reprehenderit labore similique, ut nesciunt praesentium, quia impedit cupiditate? Ipsa, ut.</p>
-  </section>
-  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae accusamus eligendi corrupti aperiam repellendus doloremque veniam tempora voluptatum, eius vero sed tenetur harum deserunt, recusandae adipisci suscipit maiores inventore, laborum neque qui. Dolorum fugiat quaerat repellendus minima, enim aliquid! Veniam vero sapiente, voluptatibus sequi ratione hic aspernatur minima perferendis sed!</p>
-</main>
-    
+    <main>
+      <section class="post">
+        <h2>Blog Post 1</h2>
+        <p class="meta">
+          <i class="fas fa-user"></i> Posted by <strong>John Doe</strong> |
+          April 20,2022
+        </p>
+        <img src="images/blog/blog1.jpg" alt="" />
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus
+          distinctio modi, corrupti adipisci nisi, quos impedit fugit ad ducimus
+          accusamus quasi, fugiat nostrum. Itaque fuga deleniti nisi
+          dignissimos, officiis sed.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Error,
+          repellat sint laboriosam ipsa ducimus tenetur fugit cum sed
+          cupiditate, eos in! Expedita, quisquam fuga. Placeat vero, maiores
+          praesentium mollitia consequuntur aperiam iste. Iste expedita quaerat
+          tempora optio incidunt nam provident. Adipisci tempora quaerat
+          repellat explicabo ducimus aspernatur voluptate molestiae
+          reprehenderit labore similique, ut nesciunt praesentium, quia impedit
+          cupiditate? Ipsa, ut.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae
+          accusamus eligendi corrupti aperiam repellendus doloremque veniam
+          tempora voluptatum, eius vero sed tenetur harum deserunt, recusandae
+          adipisci suscipit maiores inventore, laborum neque qui. Dolorum fugiat
+          quaerat repellendus minima, enim aliquid! Veniam vero sapiente,
+          voluptatibus sequi ratione hic aspernatur minima perferendis sed!
+        </p>
+      </section>
+    </main>
 
     <footer class="footer bg-dark">
       <div class="social">
@@ -57,5 +78,26 @@
       </div>
       <p>Copyright &copy:2022 - EdgeLedger</p>
     </footer>
+
+    <script>
+      const navbar = document.getElementById('navbar');
+      let scrolled =false;
+
+      window.onscroll = function () {
+        if(window.pageYOffset > 100) {
+          navbar.classList.remove('top');
+          if(!scrolled) {
+            navbar.style.transform = 'translateY(-70px)';
+          }
+          setTimeout (function(){
+            navbar.style.transform = 'translateY(0px)';
+            scrolled = true;
+          }, 200);
+        } else{
+          navbar.classList.add('top');
+          scrolled = false;
+        }    
+       }
+    </script>
   </body>
 </html>
